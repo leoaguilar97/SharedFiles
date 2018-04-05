@@ -1,13 +1,13 @@
 #ifndef PICTUREVIEW_H
 #define PICTUREVIEW_H
 
-#include <QMainWindow>
+#include <QWidget>
 
 namespace Ui {
 class PictureView;
 }
 
-class PictureView : public QMainWindow
+class PictureView : public QWidget
 {
     Q_OBJECT
 

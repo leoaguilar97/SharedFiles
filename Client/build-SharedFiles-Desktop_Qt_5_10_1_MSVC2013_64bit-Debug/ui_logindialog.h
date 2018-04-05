@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -39,14 +38,14 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
 
-    void setupUi(QDialog *LoginDialog)
+    void setupUi(QWidget *LoginDialog)
     {
         if (LoginDialog->objectName().isEmpty())
             LoginDialog->setObjectName(QStringLiteral("LoginDialog"));
-        LoginDialog->resize(320, 188);
+        LoginDialog->resize(316, 165);
         verticalLayoutWidget = new QWidget(LoginDialog);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 20, 291, 91));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 291, 91));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -77,7 +76,7 @@ public:
 
         horizontalLayoutWidget = new QWidget(LoginDialog);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 130, 291, 31));
+        horizontalLayoutWidget->setGeometry(QRect(10, 120, 291, 31));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -97,9 +96,9 @@ public:
         QMetaObject::connectSlotsByName(LoginDialog);
     } // setupUi
 
-    void retranslateUi(QDialog *LoginDialog)
+    void retranslateUi(QWidget *LoginDialog)
     {
-        LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "Dialog", nullptr));
+        LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "Form", nullptr));
         label->setText(QApplication::translate("LoginDialog", "Username:", nullptr));
         label_2->setText(QApplication::translate("LoginDialog", "Contrase\303\261a:", nullptr));
         pushButton->setText(QApplication::translate("LoginDialog", "Registrarse", nullptr));

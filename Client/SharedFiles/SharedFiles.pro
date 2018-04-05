@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-04-03T16:50:00
+# Project created by QtCreator 2018-04-05T14:38:17
 #
 #-------------------------------------------------
 
@@ -26,27 +26,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         sharedfilesclient.cpp \
+    documentview.cpp \
     logindialog.cpp \
-    documentsview.cpp \
-    mainwindow.cpp \
-    presentationsview.cpp \
     pictureview.cpp \
-    registerdialog.cpp
+    presentationview.cpp \
+    registerview.cpp
 
 HEADERS += \
         sharedfilesclient.h \
+    documentview.h \
     logindialog.h \
-    documentsview.h \
-    mainwindow.h \
-    presentationsview.h \
     pictureview.h \
-    registerdialog.h
+    presentationview.h \
+    registerview.h
 
 FORMS += \
         sharedfilesclient.ui \
+    documentview.ui \
     logindialog.ui \
-    documentsview.ui \
-    mainwindow.ui \
-    presentationsview.ui \
     pictureview.ui \
-    registerdialog.ui
+    presentationview.ui \
+    registerview.ui

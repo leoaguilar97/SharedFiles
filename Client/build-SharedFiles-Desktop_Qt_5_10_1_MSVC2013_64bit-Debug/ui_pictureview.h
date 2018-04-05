@@ -16,11 +16,8 @@
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -29,48 +26,26 @@ QT_BEGIN_NAMESPACE
 class Ui_PictureView
 {
 public:
-    QWidget *centralwidget;
-    QTextEdit *textEdit;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QTextEdit *textEdit;
 
-    void setupUi(QMainWindow *PictureView)
+    void setupUi(QWidget *PictureView)
     {
         if (PictureView->objectName().isEmpty())
             PictureView->setObjectName(QStringLiteral("PictureView"));
-        PictureView->resize(640, 424);
-        centralwidget = new QWidget(PictureView);
-        centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        textEdit = new QTextEdit(centralwidget);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(10, 10, 231, 301));
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName(QStringLiteral("scrollArea"));
-        scrollArea->setGeometry(QRect(250, 10, 381, 361));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 379, 359));
-        gridLayoutWidget = new QWidget(scrollAreaWidgetContents);
-        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 0, 160, 80));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        scrollArea->setWidget(scrollAreaWidgetContents);
-        formLayoutWidget = new QWidget(centralwidget);
+        PictureView->resize(640, 390);
+        formLayoutWidget = new QWidget(PictureView);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 320, 231, 51));
+        formLayoutWidget->setGeometry(QRect(10, 320, 231, 54));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
@@ -94,23 +69,32 @@ public:
 
         formLayout->setWidget(1, QFormLayout::FieldRole, pushButton_4);
 
-        PictureView->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(PictureView);
-        menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 640, 21));
-        PictureView->setMenuBar(menubar);
-        statusbar = new QStatusBar(PictureView);
-        statusbar->setObjectName(QStringLiteral("statusbar"));
-        PictureView->setStatusBar(statusbar);
+        scrollArea = new QScrollArea(PictureView);
+        scrollArea->setObjectName(QStringLiteral("scrollArea"));
+        scrollArea->setGeometry(QRect(250, 10, 381, 361));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 379, 359));
+        gridLayoutWidget = new QWidget(scrollAreaWidgetContents);
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(0, 0, 160, 80));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        scrollArea->setWidget(scrollAreaWidgetContents);
+        textEdit = new QTextEdit(PictureView);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(10, 10, 231, 301));
 
         retranslateUi(PictureView);
 
         QMetaObject::connectSlotsByName(PictureView);
     } // setupUi
 
-    void retranslateUi(QMainWindow *PictureView)
+    void retranslateUi(QWidget *PictureView)
     {
-        PictureView->setWindowTitle(QApplication::translate("PictureView", "MainWindow", nullptr));
+        PictureView->setWindowTitle(QApplication::translate("PictureView", "Form", nullptr));
         pushButton->setText(QApplication::translate("PictureView", "Guardar", nullptr));
         pushButton_2->setText(QApplication::translate("PictureView", "Generar JPG", nullptr));
         pushButton_3->setText(QApplication::translate("PictureView", "Cancelar", nullptr));
